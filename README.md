@@ -1,8 +1,10 @@
-#winDims
+#riWinDims
 
 This jQuery plugin helps developers present website prototypes to peers and clients while providing width and height
 information useful for debugging.  In addition to the current window dimensions, there is a scan-able QR code, and
 options to resize the current browser window (See "Behavior" below).
+
+Here's a live demo:
 
 When I first created this script, there were very few browser plugins for responsive web design.  Now, there are plenty
 of plugins and scriptlets.  However, your client may not have them installed and you may not want to complicate things
