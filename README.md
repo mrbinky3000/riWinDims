@@ -4,8 +4,6 @@ This jQuery plugin helps developers present website prototypes to peers and clie
 information useful for debugging.  In addition to the current window dimensions, there is a scan-able QR code, and
 options to resize the current browser window (See "Behavior" below).
 
-Here's a live demo:
-
 When I first created this script, there were very few browser plugins for responsive web design.  Now, there are plenty
 of plugins and scriptlets.  However, your client may not have them installed and you may not want to complicate things
 by requiring your client to install them before viewing your work, because once you cross that line, you're on the hook
@@ -17,6 +15,9 @@ their computers.__ That's actually a pretty big plus over the competition :-)
 
 The drawback is that this code needs to be disabled and removed before final delivery.  If you place
 this code in the site-wide JavaScript for your project, you only have to disable one instance.
+
+##Live Demo
+- [See it in Action: Example 1](http://matthewtoledo.com/creations/riWinDims/example/example-1.html)
 
 ##Supported Browsers
 - IE7 and up.
