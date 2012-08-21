@@ -9,9 +9,11 @@ of plugins and scriptlets.  However, your client may not have them installed and
 by requiring your client to install them before viewing your work, because once you cross that line, you're on the hook
 whenever their browser needs tech support.
 
-The only benefit to this plugin over the various browser scriptlets and plugins that currently exist, is that this
+__The only benefit to this plugin over the various browser scriptlets and plugins that currently exist, is that this
 script allows clients and colleagues to self-explore your prototypes without requiring them to install anything on
-their computers.  The drawback is that this code needs to be disabled and removed before final delivery.  If you place
+their computers.__ That's actually a pretty big plus over the competition :-)
+
+The drawback is that this code needs to be disabled and removed before final delivery.  If you place
 this code in the site-wide JavaScript for your project, you only have to disable one instance.
 
 ##Supported Browsers
@@ -23,8 +25,8 @@ this code in the site-wide JavaScript for your project, you only have to disable
 - 32kb : jQuery
 
 ##Directions
-1 Include the plugin in your JavaScript.
-2 Include the CSS.
+1 Copy the riWinDims.js file to your project and Include the plugin in your JavaScript.
+2 Copy the ri-windims-menu.css file to your project and include it in your HTML.
 3 Copy the ri-windims-menu.html file to your project.
 4 Attach the plugin to the $(body) inside a script tag at the bottom of your page or inside a jQuery dom-ready block.
 5 Configure the jQuery plugin.

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>winDims - Example 1</title>
+    <script src="lib/jquery.min.js"></script>
+    <script src="../riWinDims.js"></script>
+    <link rel="stylesheet" href="styles/ri-windims-menu.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="styles/example-1.css" type="text/css" media="all"/>
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <h1>Header</h1>
+        <p>Lorum Ipsum</p>
+    </div>
+    <div id="body">
+        <h2>Body</h2>
+        <p><img src="http://lorempixel.com/g/400/200/" class="left" /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac arcu tortor. Duis magna lectus, adipiscing faucibus malesuada vel, pulvinar nec ante. Praesent volutpat vestibulum imperdiet. Pellentesque sagittis pellentesque dolor at mollis. Nam ut feugiat urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam quis augue augue. Sed vehicula lacinia risus eu accumsan. Curabitur lobortis congue eros nec posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas turpis eros, bibendum nec tristique in, suscipit id sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin rutrum accumsan velit ac ornare. In semper euismod velit, id faucibus mauris iaculis eget. Nunc porttitor vehicula cursus.</p>
+
+        <p>Suspendisse a sem nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper adipiscing tristique. Cras erat arcu, semper sit amet auctor non, auctor eget diam. Nulla suscipit scelerisque enim in ullamcorper. Pellentesque scelerisque mollis libero ac scelerisque. Fusce in nisi ut eros dapibus tempus eu ut tellus. Nullam consequat porta sapien ac semper. Curabitur sollicitudin pellentesque imperdiet. Nulla bibendum ultrices laoreet. Vivamus urna quam, vulputate sit amet auctor vitae, tempor dignissim mauris. Integer pretium consequat ante, in facilisis turpis adipiscing et. Duis turpis leo, convallis in pretium a, bibendum vel odio.</p>
+
+        <p>Nunc sodales mi vel lectus sodales convallis. Ut at libero a nibh interdum condimentum. Duis posuere rhoncus nibh id suscipit. Duis imperdiet turpis ut tellus vehicula ut volutpat velit euismod. Vestibulum euismod nunc a elit eleifend lacinia. Donec neque sapien, scelerisque id facilisis sit amet, dictum in lectus. Aliquam imperdiet ante et enim blandit condimentum. Cras congue, elit vel condimentum mollis, lacus felis tincidunt neque, eu mollis lorem augue sed massa. Praesent non dolor et sem ultrices feugiat. Sed vitae sagittis purus. Sed viverra, nisi non consequat consectetur, orci est facilisis est, quis aliquam est tortor et metus.</p>
+
+        <p>Aenean condimentum arcu ut eros cursus dignissim. Nam tempor massa sed libero tempor rutrum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer aliquam bibendum viverra. Nullam eleifend, massa id vehicula mattis, massa augue scelerisque justo, quis elementum nisl risus et urna. Nunc venenatis ultrices erat sed cursus. Vestibulum vel ligula sem, ut pharetra turpis. Vestibulum dapibus, nisi ac iaculis mollis, purus nisl adipiscing leo, tempus aliquam orci mauris id ipsum. Morbi at justo venenatis dui convallis sagittis sit amet ac erat.</p>
+
+        <p><img src="http://lorempixel.com/output/nightlife-q-c-640-480-6.jpg" /></p>
+
+        <p>Curabitur eleifend, ligula dictum tempus ultrices, diam urna adipiscing dolor, et lobortis nisl odio id tortor. Vestibulum vel pretium eros. Etiam et tempus leo. Cras diam est, porta nec porttitor nec, pellentesque ac nunc. Nulla quis quam sapien, et interdum sapien. Nulla semper malesuada eros sed volutpat. Sed congue facilisis tortor, ac facilisis elit condimentum id. Morbi non augue nec lacus dictum interdum a at elit. Quisque faucibus ullamcorper consequat. Vivamus id nunc id lectus volutpat eleifend.</p>
+    </div>
+    <div id="footer">
+        <h3>Footer</h3>
+        <p>Nulla id nisi nisl. Mauris faucibus fringilla tristique. Sed volutpat tortor a diam lacinia aliquam. Nam arcu
+            urna, egestas id fermentum quis, placerat vel libero. Cum sociis natoque penatibus et magnis dis parturient
+            montes, nascetur ridiculus mus. Praesent adipiscing, tortor ut malesuada placerat, libero ante varius nunc,
+            at mattis orci nulla eget est. Etiam ullamcorper placerat libero, lacinia commodo tortor volutpat sit amet.
+            Ut ultricies lectus sit amet ligula dictum fermentum</p>
+    </div>
+</div>
+<script>
+
+    $(function () {
+
+        $('body').riWinDims({
+            htmlTemplate:'../ri-windims-menu.html'
+        });
+
+    });
+</script>
+</body>
+</html>
