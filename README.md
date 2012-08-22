@@ -73,12 +73,26 @@ var defaults = {
     ],
     qrCode: 'https://chart.googleapis.com/chart?cht=qr&chs=100x100&chl=' + encodeURI(document.URL) + '&chld=L',
     breakPointUL: '#ri-breakpoint-menu',
-    htmlTemplate: 'ri-windims-menu.html'
+    htmlTemplate: 'ri-windims-menu.html',
+    steps:3,
+    delay:333
 }
 ```
 
+###Common Config Options
+This is the stuff you'll most likely want to tweak.
 <dl>
+<dt>htmlTemplate (string)</dt>
+<dd>An absolute or relative path to an the readout template HTML file (ri-windims-menu.html). It must be on the same domain as the current server.</dd>
+<dt>steps (integer)</dt>
+<dd>The number of steps you would like the animation to take to reach the new window size.  To turn off the animation, set steps to 1 and delay to 0</dd>
+<dt>delay (integer)</dt>
+<dd>The number of milliseconds to wait between animation keyframes.  The smaller the number, the faster the animation.  See the note below about animation in "known bugs" below.</dd>
 <dt>sizeMap (array of objects)</dt>
+</dl>
+###Other Config Options
+You'll rarely need to mess with these.
+<dl>
 <dd>An array of objects that contain information about the target devices (breakpoints) and the spaces between the target devices (ranges).
 It looks scary but it's not, and hardly anyone would ever need to mess with it.
 <ul>
@@ -93,8 +107,8 @@ It looks scary but it's not, and hardly anyone would ever need to mess with it.
 <dd>A URL to Google's QR code API with the current url.  You'll most likely never need to change this.</dd>
 <dt>breakPointUL (string)</dt>
 <dd>A css selector representing the UL that holds the list of breakpoints.  You'll most likely never need to change this.</dd>
-<dt>htmlTemplate (string)</dt>
-<dd>An absolute or relative path to an the readout template HTML file (ri-windims-menu.html). It must be on the same domain as the current server.</dd>
 </dl>
 
-
+##Known Bugs
+###Animation Jumps All Over The Place and/or Misses Target Size
+If your page uses a lot of JavaScript or relies on a lot of ajax calls, jQuery's $(window).width() might not get an accurate measure of the page width.  This causes the animation to jump all over the place.  Solutions are to increase the delay between keyframes (the default is 333 milliseconds), or just disable the animation by setting steps to 1 and delay to 0.

@@ -8,7 +8,8 @@
     init, is, length, live, menu, name, on, open, opener, outerHeight,
     outerWidth, prepend, preventDefault, qrCode, remove, removeClass, resizeTo,
     riWinDims, setInterval, settings, showResizer, sizeMap, slideDown, slideUp,
-    start, stop, success, target, top, unbind, unique, updateWinDims, url, width
+    start, stop, success, target, top, unbind, unique, updateWinDims, url, width,
+    steps, delay
 */
 /*!
  * riWinDims
@@ -23,8 +24,8 @@
  * requiring your client to install them before viewing your work.
  *
  *
- * @version 0.1.0
- * @date 8/20/2012
+ * @version 0.1.2
+ * @date 8/22/2012
  * @author Matthew Toledo, John Keber
  * @require jQuery v1.5+
  */
@@ -53,7 +54,9 @@
                 ],
                 qrCode: 'https://chart.googleapis.com/chart?cht=qr&chs=100x100&chl=' + encodeURI(document.URL) + '&chld=L',
                 breakPointUL: '#ri-breakpoint-menu',
-                htmlTemplate: 'ri-windims-menu.html'
+                htmlTemplate: 'ri-windims-menu.html',
+                steps: 3,
+                delay: 333
             },
             plugin = this,
             $el = $(element),
@@ -249,9 +252,7 @@
                     startInnerHeight = winH,
                     sizeObj = plugin.getByUnique($(this).data('unique')),
                     targetInnerWidth = sizeObj.start,
-                    targetInnerHeight = sizeObj.height,
-                    iSteps = 30,
-                    time = Math.floor(900 / iSteps);
+                    targetInnerHeight = sizeObj.height;
 
 
                 evnt.preventDefault();
@@ -265,7 +266,7 @@
                     window.open(document.URL, '__blank__', 'width=200,height=300,location=yes,menubar=no,links=no,scrollbars=yes,toolbar=no,status=no');
                 } else {
                     plugin.getDims();
-                    plugin.animateResize(startInnerWidth, startInnerHeight, targetInnerWidth, targetInnerHeight, iSteps, time);
+                    plugin.animateResize(startInnerWidth, startInnerHeight, targetInnerWidth, targetInnerHeight, plugin.settings.steps, plugin.settings.delay);
                     plugin.hideResizer();
                 }
                 return false;
