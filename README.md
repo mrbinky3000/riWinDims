@@ -94,7 +94,7 @@ It looks scary but it's not, and hardly anyone would ever need to mess with it.
 <dt>breakPointUL (string)</dt>
 <dd>A css selector representing the UL that holds the list of breakpoints.  You'll most likely never need to change this.</dd>
 <dt>htmlTemplate (string)</dt>
-<dd>An absolute or relative path to an HTML file on the same domain as the current server.</dd>
+<dd>An absolute or relative path to an the readout template HTML file (ri-windims-menu.html). It must be on the same domain as the current server.</dd>
 </dl>
 
 
