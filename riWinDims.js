@@ -56,9 +56,7 @@
                 breakPointUL: '#ri-breakpoint-menu',
                 htmlTemplate: 'ri-windims-menu.html',
                 steps: 3,
-                delay: 333,
-                defaultPopupWidth: 320,
-                defaultPopupHeight: 480
+                delay: 333
             },
             plugin = this,
             $el = $(element),
@@ -244,9 +242,9 @@
             if (opener) {
                 newWidth = $("body", window.opener.document).data('windims-width');
                 newHeight = $("body", window.opener.document).data('windims-height');
-                newWidth = newWidth ? newWidth : plugin.settings.defaultPopupWidth;
-                newHeight = newHeight ? newHeight : plugin.settings.defaultPopupHeight;
-                plugin.animateResize(winW, winH, newWidth, newHeight, 10, 100);
+                if (newWidth && newHeight) {
+                    plugin.animateResize(winW, winH, newWidth, newHeight, 10, 100);
+                }
             }
 
             // handle requests to resize the current window to specific dimensions
