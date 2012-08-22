@@ -39,7 +39,7 @@
                     {unique: 'fueg', menu: 0, start: 0, end: 319, name: 'small / text'},
                     {unique: 'fumv', menu: 1, start: 320, end: 320, name: 'iPhone Portrait', height: 480},
                     {unique: 'lknj', menu: 0, start: 321, end: 479, name: '&lt; iPhone Landscape'},
-                    {unique: 'n4js', menu: 1, start: 480, end: 480, name: 'iPone Landscape', height: 320},
+                    {unique: 'n4js', menu: 1, start: 480, end: 480, name: 'iPhone Landscape', height: 320},
                     {unique: 'n0ep', menu: 0, start: 481, end: 599, name: '&lt; Kindle Nook'},
                     {unique: '4p3z', menu: 1, start: 600, end: 600, name: 'Kindle Nook Portrait', height: 800},
                     {unique: 'm1bs', menu: 0, start: 601, end: 767, name: '&lt; iPad Portrait'},
@@ -56,7 +56,9 @@
                 breakPointUL: '#ri-breakpoint-menu',
                 htmlTemplate: 'ri-windims-menu.html',
                 steps: 3,
-                delay: 333
+                delay: 333,
+                defaultPopupWidth: 320,
+                defaultPopupHeight: 480
             },
             plugin = this,
             $el = $(element),
@@ -242,6 +244,8 @@
             if (opener) {
                 newWidth = $("body", window.opener.document).data('windims-width');
                 newHeight = $("body", window.opener.document).data('windims-height');
+                newWidth = newWidth ? newWidth : plugin.settings.defaultPopupWidth;
+                newHeight = newHeight ? newHeight : plugin.settings.defaultPopupHeight;
                 plugin.animateResize(winW, winH, newWidth, newHeight, 10, 100);
             }
 
