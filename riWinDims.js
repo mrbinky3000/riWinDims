@@ -57,6 +57,7 @@
             },
             plugin = this,
             $el = $(element),
+            opener,
             winW,
             winH;
 
@@ -171,6 +172,7 @@
                 $ul,
                 i = plugin.settings.sizeMap.length - 1,
                 o,
+                opener,
                 newWidth,
                 newHeight;
 
@@ -229,12 +231,16 @@
 
 
             // did we create this popup? Time to resize
-            if (window.opener) {
+            try {
+                opener = window.opener.document;
+            } catch (er) { }
+
+            // did we create this popup? Time to resize
+            if (opener) {
                 newWidth = $("body", window.opener.document).data('windims-width');
                 newHeight = $("body", window.opener.document).data('windims-height');
                 plugin.animateResize(winW, winH, newWidth, newHeight, 10, 100);
             }
-
 
             // handle requests to resize the current window to specific dimensions
             // only works if the current window was created via javascript.
@@ -251,7 +257,7 @@
                 evnt.preventDefault();
 
                 // Is this window a popup?  If so, resize it.  If not, open the current page in a popup.
-                if (!window.opener) {
+                if (!opener) {
                     $('body').attr({
                         'data-windims-width': targetInnerWidth,
                         'data-windims-height': targetInnerHeight
