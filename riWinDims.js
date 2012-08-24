@@ -203,12 +203,20 @@
                         i = i - 1;
                     }
 
-                    // set up the qr code
-                    if ('string' === typeof plugin.settings.qrCode) {
-                        $('#ri-QR img').attr('src', plugin.settings.qrCode);
+                    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+                        // hide unecessary stuff for hand-held devices
+                        $('#ri-sizes').hide();
+                        $('#ri-winDims-info .c1').hide();
                     } else {
-                        $('#ri-QR').remove();
+                        // set up the qr code
+                        if ('string' === typeof plugin.settings.qrCode) {
+                            $('#ri-QR img').attr('src', plugin.settings.qrCode);
+                        } else {
+                            $('#ri-QR').remove();
+                        }
                     }
+
+
 
                     // now that our tool is loaded, show them the current windims (the page may not be done loading, and these may be innacurate at this stage)
                     plugin.updateWinDims();
@@ -243,7 +251,7 @@
                 newWidth = $("body", window.opener.document).data('windims-width');
                 newHeight = $("body", window.opener.document).data('windims-height');
                 if (newWidth && newHeight) {
-                    plugin.animateResize(winW, winH, newWidth, newHeight, 10, 100);
+                    plugin.animateResize(winW, winH, newWidth, newHeight, plugin.settings.steps, plugin.settings.delay);
                 }
             }
 
